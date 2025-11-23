@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Smasher Game - jQuery Version</title>
+    
+    <!-- jQuery and jQuery UI from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/ui-lightness/jquery-ui.min.css">
+    
+    
+    <link rel="stylesheet" href="project2.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐞 Bug Smasher Game (jQuery Edition) 🔨</h1>
+        
+        <div class="controls">
+            <div class="score-timer">
+                <div class="score">Score: <span id="scoreValue">0</span></div>
+                <div class="timer">Time: <span id="timerValue">01:59</span></div>
+                <div class="speed-indicator">Speed: <span id="speedValue">Normal</span></div>
+            </div>
+            <div class="buttons">
+                <button id="resetScore" class="btn btn-primary">Reset Score</button>
+                <button id="resetSpeed" class="btn btn-warning">Reset Speed</button>
+                <button id="showRules" class="btn btn-info">Game Rules</button>
+                <button id="startGame" class="btn btn-success">Start Game</button>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+            
+            <!-- Countdown Display -->
+            <div id="countdown" class="countdown-display">
+                <div class="countdown-number">3</div>
+                <div class="countdown-text">Get Ready!</div>
+            </div>
+            
+            <!-- Good Luck Message -->
+            <div id="goodLuckMessage" class="good-luck-message">
+                <div class="luck-text">Good Luck!</div>
+                <div class="luck-subtext">Catch the ladybug!</div>
+            </div>
+            
+            <!-- Ladybug Sprite -->
+            <div id="bug" class="ladybug-sprite">
+                <div class="ladybug-body"></div>
+                <div class="ladybug-head"></div>
+                <div class="ladybug-spots"></div>
+                <div class="ladybug-legs"></div>
+                <div class="ladybug-antennae"></div>
+            </div>
+            
+            <!-- Bonus Circle Zone -->
+            <div id="greenZone" class="bonus-circle">
+                <div class="circle-text">BONUS ZONE</div>
+                <div class="circle-multiplier">×2</div>
+            </div>
+        </div>
+        
+        <div id="gameOver" class="game-over">
+            <h2>🎯 Time's Up!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p id="performanceMessage"></p>
+        </div>
+
+        <div id="catchEffect" class="catch-effect">
+            <div class="effect-text">+1</div>
+        </div>
+
+        <div id="bonusEffect" class="catch-effect">
+            <div class="bonus-effect">BONUS +2!</div>
+        </div>
+        
+        <!-- Rules Modal -->
+        <div id="rulesModal" class="rules-modal">
+            <div class="rules-content">
+                <div class="rules-header">
+                    <h3>🐞 Bug Smasher Game Rules</h3>
+                    <button id="closeRules" class="close-btn">×</button>
+                </div>
+                <div class="rules-body">
+                    <ul>
+                        <li>🎯 <strong>Basic Goal:</strong> Click/tap the ladybug to catch it and earn points</li>
+                        <li>⚡ <strong>Speed Up:</strong> The ladybug moves faster as your score increases</li>
+                        <li>🏆 <strong>BONUS ZONE:</strong> Catch the ladybug in the golden circle for 2× points!</li>
+                        <li>⏰ <strong>Time Limit:</strong> You have 2 minutes to catch as many ladybugs as possible</li>
+                        <li>🐌 <strong>Reset Speed:</strong> Use "Reset Speed" button to slow down the ladybug</li>
+                        <li>🔄 <strong>Reset Score:</strong> Use "Reset Score" button to start over</li>
+                        <li>✨ <strong>Effects:</strong> Watch for amazing jQuery UI effects when catching!</li>
+                        <li>📱 <strong>Mobile Friendly:</strong> Works on both desktop and touchscreen devices</li>
+                    </ul>
+                    <div class="rules-tip">
+                        <strong>💡 Pro Tip:</strong> Try to anticipate where the ladybug will move next and position yourself near the bonus zone!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>Quick Start:</h3>
+        <p>Click "Game Rules" for detailed instructions, or jump right in with "Start Game"!</p>
+        <p><strong>Goal:</strong> Catch the ladybug in 2 minutes. Bonus points in the golden circle!</p>
+    </div>
+
+    
+    <script src="project2.js"></script>
+</body>
+</html>

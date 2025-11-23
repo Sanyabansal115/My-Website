@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator
+        <!-- author - Sanya Bansal -->
+    </title>
+    <!-- Link to external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="project1.css">
+</head>
+
+<body>
+    <header>
+        <!-- Container for title and course information -->
+        <div>
+            <!-- Main page heading -->
+            <!-- Course and assignment identifier -->
+            <h1>Multiplication Table Generator</h1>
+        </div>
+        
+        <!-- Logo image with alt text for accessibility -->
+        <img src="logo.png" alt="Math Logo" class="logo" width="100px">
+    </header>
+
+    <!-- Input section for user controls -->
+    <div class="input-container">
+        <!-- Form group for rows input -->
+        <div class="form-group">
+            <!-- Label for rows input field -->
+            <label for="rows">Number of Rows:</label>
+            <!-- Number input with validation constraints and default value -->
+            <input type="number" id="rows" min="1" max="20" value="10">
+        </div>
+        
+        <!-- Form group for columns input -->
+        <div class="form-group">
+            <!-- Label for columns input field -->
+            <label for="columns">Number of Columns:</label>
+            <!-- Number input with validation constraints and default value -->
+            <input type="number" id="columns" min="1" max="20" value="10">
+        </div>
+        
+        <!-- Button to trigger table generation -->
+        <button id="generate-table">Generate Table</button>
+    </div>
+
+    <!-- Container for the generated multiplication table -->
+    <div class="table-container">
+        <!-- Placeholder div where the JavaScript will insert the generated table -->
+        <div id="multiplication-table"></div>
+    </div>
+
+    <!-- Footer section with copyright information -->
+    <footer>
+        <!-- Copyright notice -->
+        <p>&copy; 2025 COMP125 301494151. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file for functionality -->
+    <script src="project1.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+# Portfolio API Testing with REST Client
+# Make sure your backend server is running on http://localhost:5000
+
+### Variables
+@baseUrl = http://localhost:5000/api
+@authToken = YOUR_TOKEN_HERE
+
+### 1. Admin Sign In (Run this first to get token)
+POST {{baseUrl}}/auth/signin
+Content-Type: application/json
+
+{
+  "email": "admin@sanyaportfolio.com",
+  "password": "Admin@123456"
+}
+
+### 2. Get Profile (After login)
+GET {{baseUrl}}/auth/profile
+Authorization: Bearer {{authToken}}
+
+### 3. Get All Education Records
+GET {{baseUrl}}/education
+Authorization: Bearer {{authToken}}
+
+### 4. Create Education Record
+POST {{baseUrl}}/education
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "institution": "Sample University",
+  "degree": "Bachelor of Computer Science",
+  "fieldOfStudy": "Computer Science",
+  "startDate": "2020-09-01",
+  "endDate": "2024-06-30",
+  "isCurrentlyStudying": false,
+  "grade": "First Class Honours",
+  "percentage": 85.5,
+  "description": "Specialized in web development and software engineering",
+  "isVisible": true
+}
+
+### 5. Get All Projects
+GET {{baseUrl}}/projects
+Authorization: Bearer {{authToken}}
+
+### 6. Create New Project
+POST {{baseUrl}}/projects
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "Portfolio Website",
+  "description": "A modern responsive portfolio website built with React and Node.js, featuring admin dashboard, MongoDB integration, and authentication system.",
+  "shortDescription": "Modern portfolio with admin dashboard",
+  "category": "web-development",
+  "technologies": ["React", "Node.js", "MongoDB", "Express", "JWT"],
+  "features": ["Admin Dashboard", "Authentication", "CRUD Operations", "Responsive Design"],
+  "links": {
+    "live": "https://sanyabansal.com",
+    "github": "https://github.com/sanyabansal115/portfolio",
+    "demo": ""
+  },
+  "startDate": "2025-01-01",
+  "endDate": "2025-11-19",
+  "isCurrentlyWorking": false,
+  "status": "completed",
+  "isVisible": true,
+  "isFeatured": true
+}
+
+### 7. Get All Contacts (Admin only)
+GET {{baseUrl}}/contact
+Authorization: Bearer {{authToken}}
+
+### 8. Create Contact Message (Public endpoint)
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "subject": "Project Inquiry",
+  "message": "Hi Sanya, I'm interested in discussing a potential web development project. Could we schedule a call?",
+  "phone": "+1-234-567-8900"
+}

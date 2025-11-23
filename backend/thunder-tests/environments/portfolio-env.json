@@ -1,0 +1,32 @@
+{
+  "client": "Thunder Client",
+  "environmentName": "Portfolio API Environment",
+  "dateExported": "2025-11-19",
+  "version": "1.0",
+  "variables": [
+    {
+      "name": "baseUrl",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "name": "userToken",
+      "value": ""
+    },
+    {
+      "name": "adminToken", 
+      "value": ""
+    },
+    {
+      "name": "contactId",
+      "value": ""
+    },
+    {
+      "name": "educationId",
+      "value": ""
+    },
+    {
+      "name": "projectId",
+      "value": ""
+    }
+  ]
+}
